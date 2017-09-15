@@ -6,8 +6,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
-using Element = Library.Element;
-using Comparer = Library.Comparer;
+using Library;
 
 namespace Intersection
 {
@@ -47,7 +46,7 @@ namespace Intersection
             }; //Second element collection
             IEnumerable<Element> resultList = new List<Element>(); //Result collection of Intersected elements
 
-            Comparer comparer = new Comparer();
+            Library.Comparer comparer = new Library.Comparer();
             Stopwatch timer = new Stopwatch();
 
             Console.WriteLine($"1) field comparison algorithm with hash checking:{Environment.NewLine}");
@@ -65,22 +64,27 @@ namespace Intersection
             timer.Restart();
             for (int i = 0; i < 1000; i++)
             {
-                resultList = firstList.Intersect(secondList, new Comparer());
+                resultList = firstList.Intersect(secondList, new Library.Comparer());
             }
             timer.Stop();
             ToConsole(resultList);
             Console.WriteLine($"time of the LINQ conparison algorithm in ticks = {timer.ElapsedTicks / 1000}{Environment.NewLine}");
             Console.Read();
+
+            
+
         }
 
         private static void ToConsole<T>(IEnumerable<T> collection) where T : Element
         {
             Console.WriteLine(String.Format($"We found {collection.Count()} intersections:"));
             foreach (var element in collection)
-            {   
+            {
                 Console.WriteLine(String.Format($"{element.Name} from {element.Vendor} with {element.Amount} amount"));
             }
             Console.WriteLine();
         }
+
+
     }
 }

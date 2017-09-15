@@ -59,6 +59,10 @@
       <Project>{6fa4b64e-b444-4f69-b193-7534c7faf4d4}</Project>
       <Name>Intersection</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{ed2a3a8d-3be5-4241-a219-d27c66ce05eb}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
