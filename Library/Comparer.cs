@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Intersection
+namespace Library
 {
     public class Comparer : IEqualityComparer<Element>  //Custom Comparer which allow user to change comparison algorithm
     {
