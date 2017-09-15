@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Intersection
 {
-    public class Comparer : IEqualityComparer<T>  //Custom Comparer which allow user to change comparison algorithm
+    public class Comparer : IEqualityComparer<Element>  //Custom Comparer which allow user to change comparison algorithm
     {
-        public bool Equals(T firstElement, T secondElement)
+        public bool Equals(Element firstElement, Element secondElement)
         {
             if (secondElement != null && firstElement != null && firstElement.GetHashCode() == secondElement.GetHashCode())
                 if (string.Equals(firstElement.Name, secondElement.Name) &&
@@ -18,7 +18,7 @@ namespace Intersection
             return false;
         }
 
-        public int GetHashCode(T obj)
+        public int GetHashCode(Element obj)
         {
             throw new NotImplementedException();
         }

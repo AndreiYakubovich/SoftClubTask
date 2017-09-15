@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intersection
 {
-    public class T
+    public class Element
     {
         public string Name;
         public string Vendor;

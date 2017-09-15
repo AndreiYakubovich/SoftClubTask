@@ -24,26 +24,26 @@ namespace Intersection
        
         static void Main()
         {
-            IEnumerable<T> firstList = new List<T>()
+            IEnumerable<Element> firstList = new List<Element>()
             {
-                new T() {Amount = 1333, Name = "Glados", Vendor = "Aperture Science"},
-                new T() {Amount = 1, Name = "Gordon", Vendor = "Black Mesa"},
-                new T() {Amount = 535, Name = "Chief", Vendor = "ODST"},
-                new T() {Amount = 354, Name = "Mario", Vendor = "Mashroom Kingdom"},
-                new T() {Amount = 255, Name = "Max", Vendor = "NewYork"},
-                new T() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
-                new T() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"}
+                new Element() {Amount = 1333, Name = "Glados", Vendor = "Aperture Science"},
+                new Element() {Amount = 1, Name = "Gordon", Vendor = "Black Mesa"},
+                new Element() {Amount = 535, Name = "Chief", Vendor = "ODST"},
+                new Element() {Amount = 354, Name = "Mario", Vendor = "Mashroom Kingdom"},
+                new Element() {Amount = 255, Name = "Max", Vendor = "NewYork"},
+                new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
+                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"}
             }; //First element collection
-            IEnumerable<T> secondList = new List<T>()
+            IEnumerable<Element> secondList = new List<Element>()
             {
-                new T() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
-                new T() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
-                new T() {Amount = 245355, Name = "Max", Vendor = "Payne"},
-                new T() {Amount = 1531, Name = "Ivan", Vendor = "ODST"},
-                new T() {Amount = 1531, Name = "Cartman", Vendor = "Mashroom Kingdom"},
-                new T() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
+                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
+                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
+                new Element() {Amount = 245355, Name = "Max", Vendor = "Payne"},
+                new Element() {Amount = 1531, Name = "Ivan", Vendor = "ODST"},
+                new Element() {Amount = 1531, Name = "Cartman", Vendor = "Mashroom Kingdom"},
+                new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
             }; //Second element collection
-            IEnumerable<T> resultList = new List<T>(); //Result collection of Intersected elements
+            IEnumerable<Element> resultList = new List<Element>(); //Result collection of Intersected elements
 
             Comparer comparer = new Comparer();
             Stopwatch timer = new Stopwatch();
@@ -71,7 +71,7 @@ namespace Intersection
             Console.Read();
         }
 
-        private static void ToConsole<T>(IEnumerable<T> collection) where T : Intersection.T
+        private static void ToConsole<T>(IEnumerable<T> collection) where T : Element
         {
             Console.WriteLine(String.Format($"We found {collection.Count()} intersections:"));
             foreach (var element in collection)
