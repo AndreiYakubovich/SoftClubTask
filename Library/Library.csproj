@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comparer.cs" />
-    <Compile Include="Element of the Collection.cs" />
+    <Compile Include="ElementEqualityComparer.cs" />
+    <Compile Include="Element.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

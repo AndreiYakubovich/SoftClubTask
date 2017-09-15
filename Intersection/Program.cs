@@ -12,8 +12,13 @@ namespace Intersection
 {
     public class Program
     {
-        public static IEnumerable<T> Intersect<T>(IEnumerable<T> firstList, IEnumerable<T> secondList, IEqualityComparer<T> comparer)
+        public static IEnumerable<T> Intersect<T>(
+            IEnumerable<T> firstList, IEnumerable<T> secondList, IEqualityComparer<T> comparer = null)
         {
+            if (firstList == null && secondList == null)
+            {
+                throw new ArgumentNullException();}
+            comparer = comparer ?? EqualityComparer<T>.Default;
             List<T> resultList = new List<T>();
             foreach (var elementA in firstList)
             {
@@ -26,27 +31,28 @@ namespace Intersection
         static void Main()
         {
             IEnumerable<Element> firstList = new List<Element>()
-            {
-                new Element() {Amount = 1333, Name = "Glados", Vendor = "Aperture Science"},
-                new Element() {Amount = 1, Name = "Gordon", Vendor = "Black Mesa"},
-                new Element() {Amount = 535, Name = "Chief", Vendor = "ODST"},
-                new Element() {Amount = 354, Name = "Mario", Vendor = "Mashroom Kingdom"},
-                new Element() {Amount = 255, Name = "Max", Vendor = "NewYork"},
-                new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
-                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"}
-            }; //First element collection
+             {
+                 new Element() {Amount = 1333, Name = "Glados", Vendor = "Aperture Science"},
+                 new Element() {Amount = 1, Name = "Gordon", Vendor = "Black Mesa"},
+                 new Element() {Amount = 535, Name = "Chief", Vendor = "ODST"},
+                 new Element() {Amount = 354, Name = "Mario", Vendor = "Mashroom Kingdom"},
+                 new Element() {Amount = 255, Name = "Max", Vendor = "NewYork"},
+                 new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
+                 new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"}
+             }; //First element collection
             IEnumerable<Element> secondList = new List<Element>()
-            {
-                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
-                new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
-                new Element() {Amount = 245355, Name = "Max", Vendor = "Payne"},
-                new Element() {Amount = 1531, Name = "Ivan", Vendor = "ODST"},
-                new Element() {Amount = 1531, Name = "Cartman", Vendor = "Mashroom Kingdom"},
-                new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
-            }; //Second element collection
+             {
+                 new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
+                 new Element() {Amount = 524, Name = "Andrei", Vendor = "BSUIR"},
+                 new Element() {Amount = 245355, Name = "Max", Vendor = "Payne"},
+                 new Element() {Amount = 1531, Name = "Ivan", Vendor = "ODST"},
+                 new Element() {Amount = 1531, Name = "Cartman", Vendor = "Mashroom Kingdom"},
+                 new Element() {Amount = 1, Name = "Sam", Vendor = "Sam&Max"},
+             }; //Second element collection
             IEnumerable<Element> resultList = new List<Element>(); //Result collection of Intersected elements
 
-            Library.Comparer comparer = new Library.Comparer();
+            ElementEqualityComparer comparer = new ElementEqualityComparer();
+
             Stopwatch timer = new Stopwatch();
 
             Console.WriteLine($"1) field comparison algorithm with hash checking:{Environment.NewLine}");
@@ -60,11 +66,11 @@ namespace Intersection
             Console.WriteLine($"time of the field comparison algorithm in ticks = {timer.ElapsedTicks / 1000}{Environment.NewLine}");
 
 
-           Console.WriteLine($"2) LINQ conparison algorithm:{Environment.NewLine}");
+            Console.WriteLine($"2) LINQ conparison algorithm:{Environment.NewLine}");
             timer.Restart();
             for (int i = 0; i < 1000; i++)
             {
-                resultList = firstList.Intersect(secondList, new Library.Comparer());
+                resultList = firstList.Intersect(secondList, new ElementEqualityComparer());
             }
             timer.Stop();
             ToConsole(resultList);
