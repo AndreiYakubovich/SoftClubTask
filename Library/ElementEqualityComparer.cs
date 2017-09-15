@@ -7,11 +7,11 @@ namespace Library
     {
         public bool Equals(Element firstElement, Element secondElement)
         {
-            if (secondElement != null && firstElement != null && firstElement.GetHashCode() == secondElement.GetHashCode())
-                if (string.Equals(firstElement.Name, secondElement.Name) &&
-                    string.Equals(firstElement.Vendor, secondElement.Vendor) &&
-                    firstElement.Amount == secondElement.Amount)
-                    return true;
+            if (secondElement != null && firstElement != null &&
+                firstElement.GetHashCode() == secondElement.GetHashCode())
+                return firstElement.Name.Equals(secondElement.Name) &&
+                       firstElement.Vendor.Equals(secondElement.Vendor) &&
+                       firstElement.Amount == secondElement.Amount;
             return false;
         }
 

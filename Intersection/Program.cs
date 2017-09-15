@@ -15,7 +15,7 @@ namespace Intersection
         public static IEnumerable<T> Intersect<T>(
             IEnumerable<T> firstList, IEnumerable<T> secondList, IEqualityComparer<T> comparer = null)
         {
-            if (firstList == null && secondList == null)
+            if (firstList == null || secondList == null)
             {
                 throw new ArgumentNullException();}
             comparer = comparer ?? EqualityComparer<T>.Default;
