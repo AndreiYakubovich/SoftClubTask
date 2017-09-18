@@ -16,8 +16,7 @@ namespace UnitTestProject
             IEnumerable<int> first = new int[] { 1, 3, 49, 64, 71, 4 };
             IEnumerable<int> second = new int[] { 49, 27, 3, 9, 4 };
             IEnumerable<int> predictedResult = new List<int>() { 3, 49, 4 };
-            Intersection.IntersectionAlgorithm testClass = new IntersectionAlgorithm();
-            IEnumerable<int> experimentResult = testClass.Intersect(first, second);
+            IEnumerable<int> experimentResult = IntersectionAlgorithms.GetIntersection(first, second);
             Assert.IsTrue(predictedResult.SequenceEqual(experimentResult));
         }
 

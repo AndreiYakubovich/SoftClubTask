@@ -7,8 +7,7 @@ namespace Library
     {
         public bool Equals(Element firstElement, Element secondElement)
         {
-            if (secondElement != null && firstElement != null &&
-                firstElement.GetHashCode() == secondElement.GetHashCode())
+            if (secondElement != null && firstElement != null)
                 return firstElement.Name.Equals(secondElement.Name) &&
                        firstElement.Vendor.Equals(secondElement.Vendor) &&
                        firstElement.Amount == secondElement.Amount;
