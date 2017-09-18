@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Library
+﻿namespace Library
 {
     public class Element
     {
@@ -16,7 +12,5 @@ namespace Library
                    (Vendor == null ? 0 : Vendor.GetHashCode()) +
                    Amount.GetHashCode();
         }
-
-       
     }
 }
