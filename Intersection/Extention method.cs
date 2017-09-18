@@ -5,9 +5,10 @@ namespace Intersection
     public static class Extention
     {
         public static IEnumerable<T> IntersectExt<T>(this IEnumerable<T> firstList, IEnumerable<T> secondList,
-            IEqualityComparer<T> comparer = null)
+            IEqualityComparer<T> comparer =null)
         {
-            return new IntersectAlgorithms().Intersect(firstList, secondList, comparer);
+            return Program.Intersect<T>(firstList, secondList, comparer);
         }
     }
+
 }
