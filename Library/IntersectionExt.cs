@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using Library;
+﻿using System.Collections.Generic;
 
-namespace Intersection
+namespace Library
 {
     public static class IntersectionExt
     {

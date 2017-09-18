@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Library
+namespace Intersection
 {
     public class ElementEqualityComparer : IEqualityComparer<Element>  //Custom Comparer which allow user to change comparison algorithm
     {
