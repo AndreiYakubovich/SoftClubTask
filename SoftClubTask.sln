@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersection", "Intersection\Intersection.csproj", "{6FA4B64E-B444-4F69-B193-7534C7FAF4D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{A9F32C94-EFCD-4015-958F-AA7A9DDD63BB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,22 +51,6 @@ Global
 		{A9F32C94-EFCD-4015-958F-AA7A9DDD63BB}.Release|x64.Build.0 = Release|Any CPU
 		{A9F32C94-EFCD-4015-958F-AA7A9DDD63BB}.Release|x86.ActiveCfg = Release|Any CPU
 		{A9F32C94-EFCD-4015-958F-AA7A9DDD63BB}.Release|x86.Build.0 = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|ARM.Build.0 = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|x64.Build.0 = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Debug|x86.Build.0 = Debug|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|ARM.ActiveCfg = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|ARM.Build.0 = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|x64.ActiveCfg = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|x64.Build.0 = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|x86.ActiveCfg = Release|Any CPU
-		{ED2A3A8D-3BE5-4241-A219-D27C66CE05EB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

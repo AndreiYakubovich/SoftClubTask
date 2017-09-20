@@ -22,13 +22,14 @@ namespace Intersection
         private IEnumerable<Element> GetRandomCollection(int count)
         {
             List<Element> collection = new List<Element>();
+            List<string> VendorsList = GetVendors();
             for (int i = 0; i < count; i++)
             {
                 collection.Add(new Element()
                 {
                     Amount = Int32.Parse(RandomStringUtils.RandomStringUtils.RandomNumeric(5)),
                     Name = RandomStringUtils.RandomStringUtils.RandomAlphabetic(5),
-                    Vendor = RandomStringUtils.RandomStringUtils.RandomAlphabetic(6)
+                    Vendor = VendorsList[Int32.Parse(RandomStringUtils.RandomStringUtils.RandomNumeric(2))]
                 });
             }
             return collection;
@@ -54,6 +55,15 @@ namespace Intersection
                 }
             }
             return secondCollection;
+        }
+        private List<string> GetVendors()
+        {
+            List<string> vendorsList = new List<string>();
+            for(int i = 0; i<=100;i++)
+            {
+                vendorsList.Add(RandomStringUtils.RandomStringUtils.RandomAlphabetic(6));
+            }
+            return vendorsList;
         }
     }
 
