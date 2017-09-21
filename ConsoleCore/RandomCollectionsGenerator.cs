@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Intersection
+namespace ConsoleCore
 {
     public class RandomCollectionsGenerator
     {
         public (IEnumerable<Element>, IEnumerable<Element>) GetTwoCollections()
         {
-            int count = 0;
-            while (count == 0)
+            int count=0;
+            while (count==0)
             {
                 Console.WriteLine($"Enter the size of collection");
-                int.TryParse(Console.ReadLine(), out count);
+                int.TryParse(Console.ReadLine(),out count);
             }
             IEnumerable<Element> firstCollection = GetRandomCollection(count);
             return (firstCollection, GetSecondCollection(firstCollection));
@@ -61,7 +61,7 @@ namespace Intersection
         private List<string> GetVendors()
         {
             List<string> vendorsList = new List<string>();
-            for (int i = 0; i <= 100; i++)
+            for(int i = 0; i<=100;i++)
             {
                 vendorsList.Add($"Vendor - {i}");
             }
@@ -69,5 +69,5 @@ namespace Intersection
         }
     }
 
-
+    
 }
